@@ -1,0 +1,17 @@
+
+.posts {
+    background-color: aqua;
+    padding: 10px;
+}
+
+.addPostBlock {
+    margin-bottom: 20px;
+}
+.addPostBlock button {
+    margin-bottom: 5px;
+}
+.addPostBlockArea {
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
