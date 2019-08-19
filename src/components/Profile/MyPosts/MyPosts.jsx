@@ -4,11 +4,13 @@ import styles from './styles/MyPosts.module.css';
 
 const MyPosts = (props) => {
 
-    let posts = {
-        first: {name: 'First name', content: 'First post content'},
-        second: {name: 'Second name', content: 'Second post content'},
-        third: {name: 'Third name', content: 'Third post content'}
-    };
+    let posts = [
+        {name: 'First name', content: 'First post content'},
+        {name: 'Second name', content: 'Second post content'},
+        {name: 'Third name', content: 'Third post content'}
+    ];
+
+    let postsData = posts.map(postItem =>  <Post postData={postItem}/>);
 
     return (
         <div className={styles.posts}>
@@ -19,9 +21,7 @@ const MyPosts = (props) => {
 
                 <button>Add post</button>
             </div>
-            <Post postData={posts.first}/>
-            <Post postData={posts.second}/>
-            <Post postData={posts.third}/>
+            {postsData}
         </div>
     )
 };
