@@ -20,6 +20,12 @@ let Dialogs = (props) => {
             <div className={styles.messages}>
                 {messageItems}
             </div>
+            <div className={styles.sendMessageBlock}>
+                <textarea name="" id="" cols="30" rows="5"></textarea>
+                <div className="buttonGroup">
+                    <button>Add message</button>
+                </div>
+            </div>
         </div>
     );
 };

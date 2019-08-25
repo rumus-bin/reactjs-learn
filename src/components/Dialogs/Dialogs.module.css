@@ -30,3 +30,9 @@
 a {
     text-decoration: none;
 }
+.sendMessageBlock {
+    padding: 10px 20px;
+}
+.sendMessageBlock textarea {
+    margin-bottom: 10px;
+}

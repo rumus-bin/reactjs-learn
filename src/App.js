@@ -27,7 +27,6 @@ function App(props) {
                     <Route path="/dialogs" render={() => {
                         return (
                             <Dialogs dialogsData={props.state.dialogsPage}/>)
-
                     }}/>
                     <Route path="/music" component={Music}/>
                     <Route path="/news" component={News}/>

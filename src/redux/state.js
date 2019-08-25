@@ -4,7 +4,7 @@ let posts = [
     {name: 'Third name', content: 'Third post content'}
 ];
 
-let nessages = [];
+let messages = [];
 
 let dialogsPage = {
     dialogItems: [
