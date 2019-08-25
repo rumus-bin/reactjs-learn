@@ -11,15 +11,24 @@ import News from "./components/News/News";
 import Settings from "./components/Settings/News";
 
 
-function App() {
+function App(props) {
+    props.state.peopleName = "Ruslan";
     return (
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header logo={logo}/>
                 <Navbar/>
                 <div className="main-content">
-                    <Route path="/profile" component={Profile}/>
-                    <Route path="/dialogs" component={Dialogs}/>
+                    <Route path="/profile" render ={() => {
+                        return (
+                            <Profile posts={props.state.posts} peopleName={props.state.peopleName}/>
+                            )
+                    }}/>
+                    <Route path="/dialogs" render={() => {
+                        return (
+                            <Dialogs dialogsData={props.state.dialogsPage}/>)
+
+                    }}/>
                     <Route path="/music" component={Music}/>
                     <Route path="/news" component={News}/>
                     <Route path="/settings" component={Settings}/>

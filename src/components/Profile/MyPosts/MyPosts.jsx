@@ -3,20 +3,13 @@ import Post from "./Post";
 import styles from './styles/MyPosts.module.css';
 
 const MyPosts = (props) => {
-
-    let posts = [
-        {name: 'First name', content: 'First post content'},
-        {name: 'Second name', content: 'Second post content'},
-        {name: 'Third name', content: 'Third post content'}
-    ];
-
-    let postsData = posts.map(postItem =>  <Post postData={postItem}/>);
+    let postsData = props.posts.map((postItem, index) =>  <Post key={index} postData={postItem}/>);
 
     return (
         <div className={styles.posts}>
             <div className={styles.addPostBlock}>
                 <div className={styles.addPostBlockArea}>
-                    <textarea name="" id="" cols="30" rows="5"></textarea>
+                    <textarea name="" id="" cols="30" rows="5" defaultValue="Hello"></textarea>
                 </div>
 
                 <button>Add post</button>
