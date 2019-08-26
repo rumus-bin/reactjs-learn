@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from "../render";
+
 let posts = [
     {name: 'First name', content: 'First post content'},
     {name: 'Second name', content: 'Second post content'},
@@ -19,6 +21,17 @@ let dialogsPage = {
         {id: 3, message: "A message"},
         {id: 4, message: "Component"},
     ]
+};
+
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: 5,
+        name: 'New post name',
+        content: postMessage
+    };
+    state.posts.push(newPost);
+
+    rerenderEntireTree(state);
 };
 
 
