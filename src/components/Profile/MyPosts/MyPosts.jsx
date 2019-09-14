@@ -3,16 +3,16 @@ import Post from "./Post";
 import styles from './styles/MyPosts.module.css';
 
 const MyPosts = (props) => {
-    let postsData = props.profilePage.posts.map((postItem, index) =>  <Post key={index} postData={postItem}/>);
+    let postsData = props.store.getState().profilePage.posts.map((postItem, index) =>  <Post key={index} postData={postItem}/>);
     let addPostElement = React.createRef();
-    let defaultPostText = props.profilePage.newPostText;
+    let defaultPostText = props.store.getState().profilePage.newPostText;
 
     let addPost = () => {
-        props.addPost()
+        props.store.addPost()
     }
 
     let setPostText = (event) => {
-        props.profilePage.updatePostText(addPostElement.current.value);
+        props.store.updatePostText(addPostElement.current.value);
     }
 
     return (

@@ -12,7 +12,7 @@ import {Route} from "react-router-dom";
 
 
 function App(props) {
-    props.state.peopleName = "Ruslan";
+    props.store.peopleName = "Ruslan";
     return (
         <div className="app-wrapper">
             <Header logo={logo}/>
@@ -20,12 +20,13 @@ function App(props) {
             <div className="main-content">
                 <Route path="/profile" render={() => {
                     return (
-                        <Profile addPost={props.addPost} profilePage={props.state.profilePage} />
+                        // <Profile addPost={props.addPost} profilePage={props.state.profilePage} />
+                        <Profile store={props.store} />
                     )
                 }}/>
                 <Route path="/dialogs" render={() => {
                     return (
-                        <Dialogs dialogsData={props.state.dialogsPage}/>)
+                        <Dialogs dialogsData={props.store.dialogsPage}/>)
                 }}/>
                 <Route path="/music" component={Music}/>
                 <Route path="/news" component={News}/>
